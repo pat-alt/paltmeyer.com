@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=https://www.patalt.org" />
     <title>Redirecting...</title>
+    <script type="text/javascript">
+        // Redirect to the corresponding page on the new domain
+        var newDomain = "https://xyz.com";
+        var currentPath = window.location.pathname + window.location.search + window.location.hash;
+        window.location.href = newDomain + currentPath;
+    </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="https://www.patalt.org">link to www.patalt.org</a>.</p>
+    <p>If you are not redirected automatically, follow this <a id="redirect-link" href="#">link to xyz.com</a>.</p>
+    <script type="text/javascript">
+        document.getElementById('redirect-link').href = newDomain + currentPath;
+    </script>
 </body>
 </html>
